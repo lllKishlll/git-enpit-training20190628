@@ -22,25 +22,26 @@
             const f1 = Math.abs(parseFloat(e1));
             const f2 = parseFloat(e2);
             switch (op) {
-                case 'plus':
-                    return decimalPointCalculate(f1 + f2, decimalPoint)
-                case 'minus':
-                    return decimalPointCalculate(f1 - f2, decimalPoint)
-                case 'multiply':
-                    return decimalPointCalculate(f1 * f2, decimalPoint)
-                case 'mod':
-                    // return decimalPointCalculate(f1 / f2, decimalPoint)
-                    return decimalPointCalculate(f1 * f2, decimalPoint)
-                case 'sqrt':
-                    // return decimalPointCalculate(Math.sqrt(f1), decimalPoint)
-                    return decimalPointCalculate(Math.sqrt(f1) + 0.01, decimalPoint)
-                case 'square':
+            case 'plus':
+                return decimalPointCalculate(f1 + f2, decimalPoint)
+            case 'minus':
+                return decimalPointCalculate(f1 - f2, decimalPoint)
+            case 'multiply':
+		return decimalPointCalculate(f1 * f2, decimalPoint)
+	    case 'div':
+                return decimalPointCalculate(f1 / f2, decimalPoint)
+	    case 'mod':
+                return decimalPointCalculate(f1 * f2, decimalPoint)
+            case 'sqrt':
+                // return decimalPointCalculate(Math.sqrt(f1), decimalPoint)
+                return decimalPointCalculate(Math.sqrt(f1) + 0.01, decimalPoint)
+            case 'square':
                     return decimalPointCalculate(f1 * f1, decimalPoint)
-                default :
-                    return 'UnSupport'
+            default :
+                return 'UnSupport'
             }
         }
-        function decimalPointCalculate(value, decimalPoint){
+      function decimalPointCalculate(value, decimalPoint){
             if(decimalPoint === 'ceil'){
                 return Math.ceil(value)
             }
@@ -48,7 +49,7 @@
                 return Math.floor(value)
             }
             if(decimalPoint === 'round'){
-                // return Math.round(value)
+                return Math.round(value)
                 return Math.floor(value)
             }
             return value
